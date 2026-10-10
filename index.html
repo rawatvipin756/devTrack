@@ -10,15 +10,27 @@
     <div class="container">
         <header>
             <h1>DevTrack</h1>
-            <p>Dev Track</p>
+            <p>Developer Productivity Dashboard</p>
         </header>
         <main>
-            <section id="dashBoard"></section>
-            <section id="taskSection"></section>
+            <section id="dashBoard">
+                <div>
+                    <h3>Total tasks</h3>
+                    <p id="totalTask">0</p>
+                </div>
+                <div>
+                    <h3>Completed</h3>
+                    <p id="compTask">0</p>
+                </div>
+                <div>
+                    <h3>Pending</h3>
+                    <p id="pendingTask">0</p>
+                </div>
+            </section>
             <section id="formSection">
-                <form>
+                <form id="taskForm">
                     <input id="inputTask" placeholder="Enter Task">
-                    <button id="addBtn">ADD</button>
+                    <button type="button" id="addBtn">ADD</button>
                 </form>
             </section>
             <section id="allTasks"></section>
