@@ -30,6 +30,16 @@ function displayTasks(){
         let delBtn=document.createElement("button");
         delBtn.innerText="Delete";
 
+        incBtn.addEventListener("click",()=> {
+            task.progress=Math.min(task.progress+10,100);
+            displayTasks();
+        });
+
+        decBtn.addEventListener("click",()=> {
+            task.progress=Math.max(task.progress-10,0);
+            displayTasks();
+        });
+
         delBtn.addEventListener("click",()=> {
             tasks.splice(index,1);
             displayTasks();
