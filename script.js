@@ -5,11 +5,25 @@ let addBtn=document.getElementById("addBtn");
 let allTasks=document.getElementById("allTasks");
 let selectOpt=document.getElementById("selectOpt");
 
-let tasks=[];
+let tasks= JSON.parse(localStorage.getItem("tasks")) || [];
+
+function saveTasks(){
+    localStorage.setItem("tasks",JSON.stringify(tasks));
+}
 
 function displayTasks(){
+    let Total=tasks.length;
+    let Complete=tasks.filter(task=> task.progress===100).length;
+    let Pending=Total-Complete;
+
+    document.getElementById("totalTask").innerText = Total;
+    document.getElementById("compTask").innerText = Complete;
+    document.getElementById("pendingTask").innerText = Pending;
+
     allTasks.innerHTML = "";
     tasks.forEach((task,index)=> {
+
+        console.log(task);
         let allTask=document.createElement("div");
 
         let input=document.createElement("p");
@@ -32,16 +46,19 @@ function displayTasks(){
 
         incBtn.addEventListener("click",()=> {
             task.progress=Math.min(task.progress+10,100);
+            saveTasks();
             displayTasks();
         });
 
         decBtn.addEventListener("click",()=> {
             task.progress=Math.max(task.progress-10,0);
+            saveTasks();
             displayTasks();
         });
 
         delBtn.addEventListener("click",()=> {
             tasks.splice(index,1);
+            saveTasks();
             displayTasks();
         });
 
@@ -67,6 +84,9 @@ taskForm.addEventListener("submit",(e)=> {
         progress:0
     }
     tasks.push(newTask);
+    saveTasks();
     displayTasks();
     inputTask.value="";
 });
+
+displayTasks();
