@@ -6,17 +6,17 @@
     <title>DevTrack</title>
     <link rel="stylesheet" href="./src/output.css">
 </head>
-<body>
-    <div>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+    <div class="mx-auto max-w-6xl px-5 py-8">
         <header>
             <h1 class="text-4xl font-bold text-slate-800">DevTrack</h1>
-            <p class="text-slate-500 mt-2">Developer Productivity Dashboard</p>
+            <p class="text-slate-500 mt-2 ">Developer Productivity Dashboard</p>
         </header>
         <main>
-            <section id="dashBoard">
-                <div>
+            <section id="dashBoard" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="border-2 w-">
                     <h3>Total tasks</h3>
-                    <p id="totalTask">0</p>
+                    <p id="totalTask" class="text-center">0</p>
                 </div>
                 <div>
                     <h3>Completed</h3>
@@ -29,7 +29,7 @@
             </section>
             <section id="formSection">
                 <form id="taskForm">
-                    <input id="inputTask" placeholder="Enter Task">
+                    <input id="inputTask" placeholder="Enter Task" class="border-2">
                     <select id="selectOpt">
                         <option>Select your options</option>
                         <option value="DSA">DSA</option>

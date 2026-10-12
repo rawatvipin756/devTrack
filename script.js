@@ -23,7 +23,7 @@ function displayTasks(){
     allTasks.innerHTML = "";
     tasks.forEach((task,index)=> {
 
-        console.log(task);
+        // console.log(task);
         let allTask=document.createElement("div");
 
         let input=document.createElement("p");
