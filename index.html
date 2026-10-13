@@ -6,28 +6,29 @@
     <title>DevTrack</title>
     <link rel="stylesheet" href="./src/output.css">
 </head>
-<body class="bg bg-slate-100">
-    <div >
-        <header>
-            <h1>DevTrack</h1>
-            <p >Developer Productivity Dashboard</p>
+<body class="bg-slate-100 min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-4xl font-black text-slate-800">DevTrack</h1>
+            <p class="mt-2 text-slate-500">Developer Productivity Dashboard</p>
         </header>
         <main>
-            <section id="dashBoard">
-                <div>
-                    <h3>Total tasks</h3>
-                    <p id="totalTask" class="text-center">0</p>
+            <section id="dashBoard" class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h3 class="text-sm font-medium text-slate-500">Total tasks</h3>
+                    <p id="totalTask" class="text-3xl font-bold test-slate-800 mt-2">0</p>
                 </div>
-                <div>
-                    <h3>Completed</h3>
-                    <p id="compTask">0</p>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h3 class="text-sm font-medium text-slate-500">Completed</h3>
+                    <p id="compTask" class="text-3xl font-bold text-green-600 mt-2">0</p>
                 </div>
-                <div>
-                    <h3>Pending</h3>
-                    <p id="pendingTask">0</p>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h3 class="text-sm font-medium text-slate-500">Pending</h3>
+                    <p id="pendingTask" class="text-3xl font-bold text-orange-500 mt-2">0</p>
                 </div>
             </section>
-            <section id="formSection">
+            <section id="formSection" class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-8">
+                <h2 class="text-xl font-semibold text-slate-800 mb-4">Add Learning Goal</h2>
                 <form id="taskForm">
                     <input id="inputTask" placeholder="Enter Task" class="border-2">
                     <select id="selectOpt">
