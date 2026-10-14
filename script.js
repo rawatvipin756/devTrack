@@ -25,24 +25,34 @@ function displayTasks(){
 
         // console.log(task);
         let allTask=document.createElement("div");
+        allTask.className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 mb-4";
 
         let input=document.createElement("p");
         input.innerText=task.title;
+        input.className="text-lg font-semibold text-slate-800";
 
         let cat=document.createElement("p");
         cat.innerText=task.category;
+        cat.className="text-sm text-blue-600 font-medium mt-1";
 
         let progres=document.createElement("p");
         progres.innerText=`Progress : ${task.progress} %`;
+        progres.className="text-sm text-slate-500 mt-3";
 
         let incBtn=document.createElement("button");
         incBtn.innerText="+";
+        incBtn.className="px-4 py-2 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transtion";
 
         let decBtn=document.createElement("button");
         decBtn.innerText="-";
+        decBtn.className="px-4 py-2 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition";
 
         let delBtn=document.createElement("button");
         delBtn.innerText="Delete";
+        delBtn.className ="px-4 py-2 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 transition";
+
+        let btnContainer = document.createElement("div");
+        btnContainer.className = "flex gap-2 mt-4";
 
         incBtn.addEventListener("click",()=> {
             task.progress=Math.min(task.progress+10,100);
@@ -65,9 +75,12 @@ function displayTasks(){
         allTask.appendChild(input);
         allTask.appendChild(cat);
         allTask.appendChild(progres);
-        allTask.appendChild(incBtn);
-        allTask.appendChild(decBtn);
-        allTask.appendChild(delBtn);
+        
+        btnContainer.appendChild(incBtn);
+        btnContainer.appendChild(decBtn);
+        btnContainer.appendChild(delBtn);
+
+        allTask.appendChild(btnContainer);
 
         allTasks.appendChild(allTask);
     });
