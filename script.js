@@ -39,9 +39,18 @@ function displayTasks(){
         progres.innerText=`Progress : ${task.progress} %`;
         progres.className="text-sm text-slate-500 mt-3";
 
+        let progressWrapper = document.createElement("div");
+        progressWrapper.className = "w-full bg-slate-200 rounded-full h-2.5 mt-2";
+
+        let progressFill = document.createElement("div");
+        progressFill.className = "bg-blue-600 h-2.5 rounded-full transition-all duration-300";
+
+        progressFill.style.width = `${task.progress}%`;
+        progressWrapper.appendChild(progressFill);
+
         let incBtn=document.createElement("button");
         incBtn.innerText="+";
-        incBtn.className="px-4 py-2 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transtion";
+        incBtn.className="px-4 py-2 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition";
 
         let decBtn=document.createElement("button");
         decBtn.innerText="-";
@@ -75,6 +84,7 @@ function displayTasks(){
         allTask.appendChild(input);
         allTask.appendChild(cat);
         allTask.appendChild(progres);
+        allTask.appendChild(progressWrapper);
         
         btnContainer.appendChild(incBtn);
         btnContainer.appendChild(decBtn);
